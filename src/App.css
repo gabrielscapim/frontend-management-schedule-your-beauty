@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'MuseoSansRounded-300';
+    src: url('/fonts/MuseoSansRounded-300.ttf') format('truetype');
+}
+
+* {
+    font-family: 'MuseoSansRounded-300';
+}
+
+
+.App {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.App main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}

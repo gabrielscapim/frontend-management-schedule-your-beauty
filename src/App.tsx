@@ -1,9 +1,14 @@
+import SideBar from './components/SideBar';
 import AppRoutes from './routes';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <AppRoutes />
+      <main>
+        <SideBar />
+        <AppRoutes />
+      </main>
     </div>
   );
 }
