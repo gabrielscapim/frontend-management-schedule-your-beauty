@@ -54,7 +54,13 @@
 
 @media all and (max-width: 824px) {
     .side-bar {
-        width: auto;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 
     .nav i {

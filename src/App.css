@@ -20,3 +20,9 @@
     flex-direction: row;
     width: 100%;
 }
+
+@media all and (max-width: 824px) {
+    .App main {
+        flex-direction: column;
+    }
+}
