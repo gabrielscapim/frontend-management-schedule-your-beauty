@@ -5,7 +5,7 @@ function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" Component={ ManagerSchedules } />
+        <Route path="/agendamentos" element={ <ManagerSchedules /> } />
       </Routes>
     </BrowserRouter>
   );
