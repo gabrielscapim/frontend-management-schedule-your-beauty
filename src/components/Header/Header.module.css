@@ -1,32 +1,14 @@
 .header {
     padding: 16px; 
-    margin: 0px 0px 24px 0px;
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
-}
-
-.header button {
-    background-color: white;
-    border: none;
-    margin: 0px;
-}
-
-.header button:hover {
-    cursor: pointer;
     font-weight: bold;
-    color: #710193;
+    display: none;
 }
-
-.header span {
-    font-weight: bold;
-    text-align: center;
-    vertical-align: middle;
-}
-
 
 @media all and (max-width: 824px) {
     .header {
-        margin-bottom: 12px;
+        display: block;
     }
 }
