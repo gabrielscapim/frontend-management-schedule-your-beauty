@@ -4,9 +4,22 @@ function SideBar() {
   return (
     <aside className={ styles['side-bar'] }>
       <nav className={ styles.nav }>
-        <a href="/">Agendamentos</a>
-        <a href="/">Clientes</a>
-        <a href="/">Financeiro</a>
+        <a href="/">
+          <i className="bi bi-clock"> </i>
+          Agendamentos
+        </a>
+        <a href="/">
+          <i className="bi bi-calendar"> </i>
+          Gerenciar datas
+        </a>
+        <a href="/">
+          <i className="bi bi-person"> </i>
+          Clientes
+        </a>
+        <a href="/">
+          <i className="bi bi-graph-up-arrow"> </i>
+          Financeiro
+        </a>
       </nav>
     </aside>
   );
