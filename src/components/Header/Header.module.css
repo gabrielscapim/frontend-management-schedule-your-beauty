@@ -1,7 +1,6 @@
 .header {
     padding: 16px; 
     margin: 0px 0px 40px 0px;
-    border-bottom: 1px solid #e3d5eb;
     font-size: 14px;
     display: flex;
     justify-content: space-between;
