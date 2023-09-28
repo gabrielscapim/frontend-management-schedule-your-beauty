@@ -1,6 +1,6 @@
 function ManagerSchedules() {
   return (
-    <div> </div>
+    <div>Pagina agendamentos</div>
   );
 }
 
