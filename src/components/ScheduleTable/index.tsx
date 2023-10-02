@@ -1,4 +1,5 @@
 import whatsappHandleClick from '../../helpers/whatsappHandleClick';
+import deleteSchedule from '../../services/deleteSchedule';
 import Schedule from '../../types/Schedule';
 import styles from './ScheduleTable.module.css';
 
@@ -50,7 +51,10 @@ function ScheduleTable({ schedules, cancelScheduleAvailable }: ScheduleTableProp
             </td>
             { cancelScheduleAvailable && (
               <td className={ styles['handle-column'] }>
-                <button style={ { color: '#dc3545', fontWeight: 'bold' } }>
+                <button
+                  onClick={ () => deleteSchedule(id) }
+                  style={ { color: '#dc3545', fontWeight: 'bold' } }
+                >
                   Cancelar
                 </button>
               </td>

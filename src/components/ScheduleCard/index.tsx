@@ -1,4 +1,5 @@
 import whatsappHandleClick from '../../helpers/whatsappHandleClick';
+import deleteSchedule from '../../services/deleteSchedule';
 import Schedule from '../../types/Schedule';
 import styles from './ScheduleCard.module.css';
 
@@ -9,6 +10,7 @@ interface ScheduleCardProps {
 
 function ScheduleCard({ schedule, cancelScheduleAvailable }: ScheduleCardProps) {
   const {
+    id,
     clientName,
     clientNumber,
     date,
@@ -26,7 +28,7 @@ function ScheduleCard({ schedule, cancelScheduleAvailable }: ScheduleCardProps) 
       </div>
       <div className={ styles['column-2'] }>
         { cancelScheduleAvailable && (
-          <button>
+          <button onClick={ () => deleteSchedule(id) }>
             <i className="bi bi-x-circle" style={ { color: '#b90b1d' } }> </i>
           </button>
         ) }
