@@ -1,3 +1,4 @@
+import whatsappHandleClick from '../../helpers/whatsappHandleClick';
 import Schedule from '../../types/Schedule';
 import styles from './ScheduleTable.module.css';
 
@@ -6,10 +7,6 @@ interface ScheduleTableProps {
 }
 
 function ScheduleTable({ schedules }: ScheduleTableProps) {
-  const contactHandleClick = (number: string) => {
-    window.location.href = `https://wa.me/55${number}`;
-  };
-
   return (
     <table className={ styles.table }>
       <thead>
@@ -42,7 +39,7 @@ function ScheduleTable({ schedules }: ScheduleTableProps) {
             <td>{eventName}</td>
             <td className={ styles['handle-column'] }>
               <button
-                onClick={ () => contactHandleClick(clientNumber) }
+                onClick={ () => whatsappHandleClick(clientNumber) }
                 style={ { color: '#765ac2', fontWeight: 'bold' } }
               >
                 Contato

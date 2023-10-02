@@ -1,3 +1,4 @@
+import whatsappHandleClick from '../../helpers/whatsappHandleClick';
 import Schedule from '../../types/Schedule';
 import styles from './ScheduleCard.module.css';
 
@@ -6,10 +7,6 @@ interface ScheduleCardProps {
 }
 
 function ScheduleCard({ schedule }: ScheduleCardProps) {
-  const contactHandleClick = (number: string) => {
-    window.location.href = `https://wa.me/55${number}`;
-  };
-
   const {
     clientName,
     clientNumber,
@@ -30,7 +27,7 @@ function ScheduleCard({ schedule }: ScheduleCardProps) {
         <button>
           <i className="bi bi-x-circle" style={ { color: '#b90b1d' } }> </i>
         </button>
-        <button onClick={ () => contactHandleClick(clientNumber) }>
+        <button onClick={ () => whatsappHandleClick(clientNumber) }>
           <i className="bi bi-telephone-fill" style={ { color: '#4f388f' } }> </i>
         </button>
       </div>
