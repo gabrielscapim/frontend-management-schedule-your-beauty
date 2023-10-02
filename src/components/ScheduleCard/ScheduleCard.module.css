@@ -41,13 +41,13 @@
 }
 
 .column-2 button {
-    background-color: #fcfcfc;
+    background-color: #fff;
     border: none;
 }
 
 .column-2 button i {
     font-size: 16px;
-    background-color: #fcfcfc;
+    background-color: #fff;
 }
 
 @media all and (min-width: 824px) {
