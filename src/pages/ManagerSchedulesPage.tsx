@@ -9,12 +9,16 @@ import fetchSchedules from '../services/fetchSchedules';
 import Loading from '../components/Loading';
 
 function ManagerSchedulesPage() {
+  const CURRENT_DATE = moment().format('YYYY-MM-DD');
+
   const [schedules, setSchedules] = useState<[] | Schedule[]>();
   const [state, setState] = useState<{ scheduleDate: string }>({
-    scheduleDate: moment().format('YYYY-MM-DD'),
+    scheduleDate: CURRENT_DATE,
   });
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [dateSearched, setDateSearched] = useState<string>(state.scheduleDate);
+  const [currentDateIsGreaterThanSearched,
+    setCurrentDateIsGreaterThanSearched] = useState<boolean>(false);
 
   const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = target;
@@ -34,6 +38,12 @@ function ManagerSchedulesPage() {
   useEffect(() => {
     getSchedules();
   }, []);
+
+  useEffect(() => {
+    return CURRENT_DATE > dateSearched
+      ? setCurrentDateIsGreaterThanSearched(true)
+      : setCurrentDateIsGreaterThanSearched(false);
+  }, [dateSearched]);
 
   return (
     <section className={ styles['page-container'] }>
@@ -66,11 +76,18 @@ function ManagerSchedulesPage() {
       { isLoading && <Loading /> }
       { !isLoading && schedules && schedules?.length > 0 && (
         schedules.map((schedule) => (
-          <ScheduleCard schedule={ schedule } key={ `schedule-id-${schedule.id}` } />
+          <ScheduleCard
+            schedule={ schedule }
+            key={ `schedule-id-${schedule.id}` }
+            cancelScheduleAvailable={ !currentDateIsGreaterThanSearched }
+          />
         ))
       )}
       { !isLoading && schedules && schedules?.length > 0 && (
-        <ScheduleTable schedules={ schedules } />
+        <ScheduleTable
+          schedules={ schedules }
+          cancelScheduleAvailable={ !currentDateIsGreaterThanSearched }
+        />
       )}
     </section>
   );

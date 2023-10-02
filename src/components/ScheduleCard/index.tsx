@@ -4,9 +4,10 @@ import styles from './ScheduleCard.module.css';
 
 interface ScheduleCardProps {
   schedule: Schedule;
+  cancelScheduleAvailable: boolean;
 }
 
-function ScheduleCard({ schedule }: ScheduleCardProps) {
+function ScheduleCard({ schedule, cancelScheduleAvailable }: ScheduleCardProps) {
   const {
     clientName,
     clientNumber,
@@ -24,9 +25,11 @@ function ScheduleCard({ schedule }: ScheduleCardProps) {
         <span>{ eventName.toLocaleUpperCase() }</span>
       </div>
       <div className={ styles['column-2'] }>
-        <button>
-          <i className="bi bi-x-circle" style={ { color: '#b90b1d' } }> </i>
-        </button>
+        { cancelScheduleAvailable && (
+          <button>
+            <i className="bi bi-x-circle" style={ { color: '#b90b1d' } }> </i>
+          </button>
+        ) }
         <button onClick={ () => whatsappHandleClick(clientNumber) }>
           <i className="bi bi-telephone-fill" style={ { color: '#4f388f' } }> </i>
         </button>

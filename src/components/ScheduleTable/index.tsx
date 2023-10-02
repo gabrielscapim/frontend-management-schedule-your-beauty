@@ -4,9 +4,10 @@ import styles from './ScheduleTable.module.css';
 
 interface ScheduleTableProps {
   schedules: Schedule[];
+  cancelScheduleAvailable: boolean;
 }
 
-function ScheduleTable({ schedules }: ScheduleTableProps) {
+function ScheduleTable({ schedules, cancelScheduleAvailable }: ScheduleTableProps) {
   return (
     <table className={ styles.table }>
       <thead>
@@ -16,8 +17,10 @@ function ScheduleTable({ schedules }: ScheduleTableProps) {
           <th>HORÁRIO</th>
           <th>PRODUÇÃO</th>
           <th>EVENTO</th>
-          <th> </th>
-          <th className={ styles['last-column'] }> </th>
+          <th className={ !cancelScheduleAvailable ? styles['last-column'] : '' }> </th>
+          { cancelScheduleAvailable && (
+            <th className={ styles['last-column'] }> </th>
+          ) }
         </tr>
       </thead>
       <tbody>
@@ -45,11 +48,13 @@ function ScheduleTable({ schedules }: ScheduleTableProps) {
                 Contato
               </button>
             </td>
-            <td className={ styles['handle-column'] }>
-              <button style={ { color: '#dc3545', fontWeight: 'bold' } }>
-                Cancelar
-              </button>
-            </td>
+            { cancelScheduleAvailable && (
+              <td className={ styles['handle-column'] }>
+                <button style={ { color: '#dc3545', fontWeight: 'bold' } }>
+                  Cancelar
+                </button>
+              </td>
+            ) }
           </tr>
         )) }
       </tbody>
