@@ -18,7 +18,7 @@ function SideBar() {
         >
           <i className="bi bi-clock"> </i>
           <h5>
-            Agendamentos
+            AGENDAMENTOS
           </h5>
         </a>
         <a
@@ -27,7 +27,7 @@ function SideBar() {
         >
           <i className="bi bi-calendar"> </i>
           <h5>
-            Datas
+            DATAS
           </h5>
         </a>
         <a
@@ -36,7 +36,7 @@ function SideBar() {
         >
           <i className="bi bi-person"> </i>
           <h5>
-            Clientes
+            CLIENTES
           </h5>
         </a>
         <a
@@ -45,7 +45,7 @@ function SideBar() {
         >
           <i className="bi bi-graph-up-arrow"> </i>
           <h5>
-            Financeiro
+            FINANCEIRO
           </h5>
         </a>
         <a
@@ -54,7 +54,7 @@ function SideBar() {
         >
           <i className="bi bi-box-arrow-right"> </i>
           <h5>
-            Sair
+            SAIR
           </h5>
         </a>
       </nav>
