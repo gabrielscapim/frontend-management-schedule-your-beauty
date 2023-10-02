@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ManagerSchedules from '../pages/ManagerSchedules';
+import ManagerSchedulesPage from '../pages/ManagerSchedulesPage';
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/agendamentos" element={ <ManagerSchedules /> } />
+        <Route path="/agendamentos" element={ <ManagerSchedulesPage /> } />
       </Routes>
     </BrowserRouter>
   );
