@@ -7,6 +7,9 @@
     font-family: 'MuseoSansRounded-300';
 }
 
+body {
+    margin: 0;
+}
 
 .App {
     display: flex;
@@ -23,6 +26,7 @@
 
 @media all and (max-width: 824px) {
     .App main {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
     }
 }
