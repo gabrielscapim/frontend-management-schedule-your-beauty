@@ -1,0 +1,57 @@
+.schedule-card-container {
+    border: 1px solid #e3d5eb;
+    display: flex;
+    padding: 16px;
+    border-radius: 12px;
+    flex-direction: row;
+    background-color: white;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.column-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-1 h5 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.column-1 h6 {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 24px;
+}
+
+.column-1 span {
+    font-size: 12px;
+    color: grey;
+}
+
+.column-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.column-2 button {
+    background-color: #fff;
+    border: none;
+}
+
+.column-2 button i {
+    font-size: 16px;
+    background-color: #fff;
+}
+
+@media all and (min-width: 824px) {
+    .schedule-card-container {
+        display: none;
+    }
+}
