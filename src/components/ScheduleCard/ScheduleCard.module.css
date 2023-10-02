@@ -1,11 +1,10 @@
 .schedule-card-container {
     border: 1px solid #e3d5eb;
     display: flex;
-    max-width: 360px;
     padding: 16px;
     border-radius: 12px;
     flex-direction: row;
-    background-color: #fcfcfc;
+    background-color: white;
     margin-bottom: 20px;
     justify-content: space-between;
 }
