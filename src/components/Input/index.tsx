@@ -4,9 +4,10 @@ import styles from './Input.module.css';
 type InputProps = React.ComponentProps<'input'> & {
   id: string;
   label: string;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
 };
 
-function Input({ id, label, className, ...props }: InputProps) {
+function Input({ id, label, className, handleChange, ...props }: InputProps) {
   return (
     <div className={ styles['input-container'] }>
       { label.length !== 0 && (
@@ -16,6 +17,7 @@ function Input({ id, label, className, ...props }: InputProps) {
       )}
       <input
         { ...props }
+        onChange={ (event) => handleChange(event) }
       />
     </div>
   );
