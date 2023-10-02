@@ -11,10 +11,11 @@ function ScheduleCard({ schedule }: ScheduleCardProps) {
   };
 
   const {
-    client: { name: clientName, number },
+    clientName,
+    clientNumber,
     date,
     startTime,
-    production: { name: productionName },
+    productionName,
     eventName,
   } = schedule;
   return (
@@ -29,7 +30,7 @@ function ScheduleCard({ schedule }: ScheduleCardProps) {
         <button>
           <i className="bi bi-x-circle" style={ { color: '#b90b1d' } }> </i>
         </button>
-        <button>
+        <button onClick={ () => contactHandleClick(clientNumber) }>
           <i className="bi bi-telephone-fill" style={ { color: '#4f388f' } }> </i>
         </button>
       </div>

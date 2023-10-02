@@ -6,6 +6,10 @@ interface ScheduleTableProps {
 }
 
 function ScheduleTable({ schedules }: ScheduleTableProps) {
+  const contactHandleClick = (number: string) => {
+    window.location.href = `https://wa.me/55${number}`;
+  };
+
   return (
     <table className={ styles.table }>
       <thead>
@@ -22,10 +26,11 @@ function ScheduleTable({ schedules }: ScheduleTableProps) {
       <tbody>
         { schedules.map((
           { id,
-            client: { name: clientName },
+            clientName,
+            clientNumber,
             date,
             startTime,
-            production: { name: productionName },
+            productionName,
             eventName,
           },
         ) => (
@@ -36,7 +41,10 @@ function ScheduleTable({ schedules }: ScheduleTableProps) {
             <td>{productionName}</td>
             <td>{eventName}</td>
             <td className={ styles['handle-column'] }>
-              <button style={ { color: '#765ac2', fontWeight: 'bold' } }>
+              <button
+                onClick={ () => contactHandleClick(clientNumber) }
+                style={ { color: '#765ac2', fontWeight: 'bold' } }
+              >
                 Contato
               </button>
             </td>

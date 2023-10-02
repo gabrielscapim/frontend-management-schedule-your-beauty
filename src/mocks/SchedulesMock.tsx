@@ -1,65 +1,33 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import Schedule from '../types/Schedule';
 
 const SchedulesMock: Schedule[] = [
   {
-    id: 2,
-    client: {
-      id: 3,
-      name: 'Isabela',
-      number: '88888888888',
-    },
-    production: {
-      id: 3,
-      name: 'Penteado',
-      price: 50,
-    },
-    startTime: '12:30:00',
+    id: 1,
+    clientName: 'Gabriel',
     date: '26/09/2023',
-    schedulingDateTimes: [
-      {
-        id: 2,
-        dateTime: '2023-09-26 12:30:00',
-        lastScheduleTimeDay: false,
-        available: false,
-      },
-    ],
+    startTime: '12:00:00',
+    productionName: 'Penteado',
     eventName: 'Formatura',
+    clientNumber: '11111111111',
+  },
+  {
+    id: 2,
+    clientName: 'Isabela',
+    date: '26/09/2023',
+    startTime: '12:30:00',
+    productionName: 'Penteado',
+    eventName: 'Formatura',
+    clientNumber: '88888888888',
   },
   {
     id: 3,
-    client: {
-      id: 4,
-      name: 'isa',
-      number: '44991343233',
-    },
-    production: {
-      id: 2,
-      name: 'Maquiagem',
-      price: 130,
-    },
-    startTime: '13:30:00',
+    clientName: 'isa',
     date: '26/09/2023',
-    schedulingDateTimes: [
-      {
-        id: 4,
-        dateTime: '2023-09-26 13:30:00',
-        lastScheduleTimeDay: false,
-        available: false,
-      },
-      {
-        id: 5,
-        dateTime: '2023-09-26 14:00:00',
-        lastScheduleTimeDay: false,
-        available: false,
-      },
-      {
-        id: 6,
-        dateTime: '2023-09-26 14:30:00',
-        lastScheduleTimeDay: false,
-        available: false,
-      },
-    ],
+    startTime: '13:30:00',
+    productionName: 'Maquiagem',
     eventName: 'casamento',
+    clientNumber: '44991343233',
   },
 ];
 
