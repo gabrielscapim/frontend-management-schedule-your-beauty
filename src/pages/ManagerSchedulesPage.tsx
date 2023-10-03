@@ -57,7 +57,6 @@ function ManagerSchedulesPage() {
           id="scheduleDate"
           label=""
           name="scheduleDate"
-          placeholder="Nome do cliente"
           value={ state.scheduleDate }
           handleChange={ handleChange }
         />
