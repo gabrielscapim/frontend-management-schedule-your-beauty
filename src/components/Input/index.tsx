@@ -16,8 +16,9 @@ function Input({ id, label, className, handleChange, ...props }: InputProps) {
         </label>
       )}
       <input
-        { ...props }
+        id={ id }
         onChange={ (event) => handleChange(event) }
+        { ...props }
       />
     </div>
   );

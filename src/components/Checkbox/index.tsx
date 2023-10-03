@@ -11,6 +11,7 @@ function Checkbox({ id, label, handleChange, ...props }: CheckboxProps) {
   return (
     <div className={ styles['input-container'] }>
       <input
+        id={ id }
         type="checkbox"
         onChange={ (event) => handleChange(event) }
         { ...props }
