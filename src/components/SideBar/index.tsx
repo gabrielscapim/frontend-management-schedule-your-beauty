@@ -22,8 +22,8 @@ function SideBar() {
           </h5>
         </a>
         <a
-          href="/"
-          style={ location.includes('gerenciar-datas') ? navLocationStyle : {} }
+          href="/datas"
+          style={ location.includes('datas') ? navLocationStyle : {} }
         >
           <i className="bi bi-calendar"> </i>
           <h5>
@@ -32,7 +32,7 @@ function SideBar() {
         </a>
         <a
           href="/"
-          style={ location.includes('cliented') ? navLocationStyle : {} }
+          style={ location.includes('clientes') ? navLocationStyle : {} }
         >
           <i className="bi bi-person"> </i>
           <h5>
@@ -50,7 +50,6 @@ function SideBar() {
         </a>
         <a
           href="/"
-          style={ location.includes('financeiro') ? navLocationStyle : {} }
         >
           <i className="bi bi-box-arrow-right"> </i>
           <h5>
