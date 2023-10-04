@@ -10,5 +10,10 @@
   display: inline-block;
   vertical-align: middle;
   margin-right: 6px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.disabled {
+  color: green;
+  font-weight: bold;
 }
