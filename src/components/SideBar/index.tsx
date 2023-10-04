@@ -16,7 +16,7 @@ function SideBar() {
           href="/agendamentos"
           style={ location.includes('agendamentos') ? navLocationStyle : {} }
         >
-          <i className="bi bi-calendar"> </i>
+          <i className="bi bi-clock"> </i>
           <h5>
             AGENDAMENTOS
           </h5>
@@ -25,9 +25,9 @@ function SideBar() {
           href="/datas"
           style={ location.includes('datas') ? navLocationStyle : {} }
         >
-          <i className="bi bi-clock"> </i>
+          <i className="bi bi-calendar"> </i>
           <h5>
-            HORÁRIOS
+            DATAS
           </h5>
         </a>
         <a
