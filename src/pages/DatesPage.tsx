@@ -1,6 +1,7 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import { useEffect, useState } from 'react';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 import Checkbox from '../components/Checkbox';
 import styles from './DatesPage.module.css';
 import Input from '../components/Input';
@@ -15,12 +16,15 @@ import getAvailableTimesSelected from '../helpers/getAvailableTimesSelected';
 import postSchedulingTimes from '../services/postSchedulingTimes';
 
 function DatesPage() {
+  const navigate = useNavigate();
   const CURRENT_DATE = moment().format('YYYY-MM-DD');
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries());
 
   const [timesFromApi, setTimesFromApi] = useState<SchedulingTime[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [state, setState] = useState<any>({
-    date: CURRENT_DATE,
+    date: params.date || CURRENT_DATE,
     lastTimeToSchedule: 'Nenhum horário',
   });
   const [dateSearched, setDateSearched] = useState<string>(state.date);
@@ -32,7 +36,6 @@ function DatesPage() {
     const filteredSchedulingTimes = filterSchedulingTimes(schedulingTimes);
     const lastTimeToSchedule = schedulingTimes
       .find((time) => time.lastScheduleTimeDay === true)?.time;
-    console.log(lastTimeToSchedule);
 
     setTimesFromApi(schedulingTimes);
     setState((prevState: any) => ({
@@ -47,7 +50,7 @@ function DatesPage() {
     if (window.confirm('Deseja atualizar os horários de agendamento?')) {
       await postSchedulingTimes(dateSearched, state, timesFromApi);
       window.alert('Horários atualizados com sucesso!');
-      window.location.reload();
+      navigate(`/datas?date=${dateSearched}`);
     }
   };
 
