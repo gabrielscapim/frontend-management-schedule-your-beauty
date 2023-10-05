@@ -51,19 +51,29 @@
     border-radius: 12px;
     padding: 12px;
     border: 1px solid #EEEEEE;
+    margin-bottom: 32px;
 }
 
 .times-container h6 {
     font-weight: normal;
     margin: 12px 0px 36px 0px;
     font-size: 14px;
-    text-align: center;
 }
 
 .checkbox-container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     order: 1;
+    margin-bottom: 48px;
+}
+
+.button-container {
+    display: flex;
+    margin-bottom: 48px;
+}
+
+.times-container span {
+    font-size: 14px;
 }
 
 @media all and (max-width: 1020px) {
