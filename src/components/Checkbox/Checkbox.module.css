@@ -15,6 +15,5 @@
 }
 
 .disabled {
-  color: green;
-  font-weight: bold;
+  opacity: 0.5;
 }
