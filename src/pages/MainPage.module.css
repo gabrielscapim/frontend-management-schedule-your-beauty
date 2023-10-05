@@ -1,0 +1,24 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    background-color: #F9F9F9;
+}
+
+.page-container h2 {
+    font-size: 48px;
+    color: #8341aa;
+}
+
+.page-container h3 {
+    font-size: 20px;
+}
+
+@media all and (max-width: 824px) {
+    .page-container {
+        padding: 32px 24px 0px 24px;
+    }
+}
