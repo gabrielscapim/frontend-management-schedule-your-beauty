@@ -1,3 +1,4 @@
+import Button from '../../components/Button';
 import Input from '../../components/Input';
 import styles from './LoginPage.module.css';
 
@@ -16,6 +17,10 @@ function LoginPage() {
           label="Senha"
           placeholder="Digite sua senha"
           handleChange={ () => {} }
+        />
+        <Button
+          label="Entrar"
+          handleClick={ () => {} }
         />
       </section>
     </main>
