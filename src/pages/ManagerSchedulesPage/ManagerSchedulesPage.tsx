@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import Input from '../components/Input';
-import ScheduleCard from '../components/ScheduleCard';
-import ScheduleTable from '../components/ScheduleTable';
+import Input from '../../components/Input';
+import ScheduleCard from '../../components/ScheduleCard';
+import ScheduleTable from '../../components/ScheduleTable';
 import styles from './ManagerSchedulesPage.module.css';
-import Schedule from '../types/Schedule';
-import fetchSchedules from '../services/fetchSchedules';
-import Loading from '../components/Loading';
+import Schedule from '../../types/Schedule';
+import fetchSchedules from '../../services/fetchSchedules';
+import Loading from '../../components/Loading';
 
 function ManagerSchedulesPage() {
   const CURRENT_DATE = moment().format('YYYY-MM-DD');
