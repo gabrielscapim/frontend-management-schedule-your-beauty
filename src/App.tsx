@@ -1,19 +1,26 @@
 import SideBar from './components/SideBar';
-import AppRoutes from './routes';
+import MainRoutes from './routes/MainRoute';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import LoginRoute from './routes/LoginRoute';
 
 function App() {
+  const token = localStorage.getItem('token');
+
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <SideBar />
-        <AppRoutes />
-      </main>
-      <Footer />
-    </div>
+    token ? (
+      <div className="App">
+        <Header />
+        <main>
+          <SideBar />
+          <MainRoutes />
+        </main>
+        <Footer />
+      </div>
+    ) : (
+      <LoginRoute />
+    )
   );
 }
 
