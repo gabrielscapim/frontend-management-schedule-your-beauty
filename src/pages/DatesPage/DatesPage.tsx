@@ -2,18 +2,18 @@
 import { useEffect, useState } from 'react';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
-import Checkbox from '../components/Checkbox';
+import Checkbox from '../../components/Checkbox';
 import styles from './DatesPage.module.css';
-import Input from '../components/Input';
-import allTimes from '../assets/AllTimes';
-import fetchSchedulingTimes from '../services/fetchSchedulingTimes';
-import SchedulingTime from '../types/SchedulingTime';
-import filterSchedulingTimes from '../helpers/filterSchedulingTimes';
-import Loading from '../components/Loading';
-import Select from '../components/Select';
-import Button from '../components/Button';
-import getAvailableTimesSelected from '../helpers/getAvailableTimesSelected';
-import postSchedulingTimes from '../services/postSchedulingTimes';
+import Input from '../../components/Input';
+import allTimes from '../../assets/AllTimes';
+import fetchSchedulingTimes from '../../services/fetchSchedulingTimes';
+import SchedulingTime from '../../types/SchedulingTime';
+import filterSchedulingTimes from '../../helpers/filterSchedulingTimes';
+import Loading from '../../components/Loading';
+import Select from '../../components/Select';
+import Button from '../../components/Button';
+import getAvailableTimesSelected from '../../helpers/getAvailableTimesSelected';
+import postSchedulingTimes from '../../services/postSchedulingTimes';
 
 function DatesPage() {
   const navigate = useNavigate();

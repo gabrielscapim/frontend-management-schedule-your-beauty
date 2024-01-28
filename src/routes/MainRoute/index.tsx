@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ManagerSchedulesPage from '../pages/ManagerSchedulesPage';
-import DatesPage from '../pages/DatesPage';
-import NotFoundPage from '../pages/NotFoundPage';
-import MainPage from '../pages/MainPage';
+import ManagerSchedulesPage from '../../pages/ManagerSchedulesPage/ManagerSchedulesPage';
+import DatesPage from '../../pages/DatesPage/DatesPage';
+import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
+import MainPage from '../../pages/MainPage/MainPage';
 
-function AppRoutes() {
+function MainRoutes() {
   return (
     <BrowserRouter>
       <Routes>
@@ -17,4 +17,4 @@ function AppRoutes() {
   );
 }
 
-export default AppRoutes;
+export default MainRoutes;

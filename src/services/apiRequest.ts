@@ -6,9 +6,10 @@ const apiRequest = async (method: string, endpoint: string, data: any = null)
 : Promise<any> => {
   try {
     let response;
+    const token = localStorage.getItem('token');
     const config = {
       headers: {
-        Authorization: '',
+        Authorization: `Bearer ${token}`,
       },
     };
 
