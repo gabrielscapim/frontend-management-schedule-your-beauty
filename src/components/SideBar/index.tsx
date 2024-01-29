@@ -31,25 +31,12 @@ function SideBar() {
           </h5>
         </a>
         <a
-          href="/"
-          style={ location.includes('clientes') ? navLocationStyle : {} }
-        >
-          <i className="bi bi-person"> </i>
-          <h5>
-            CLIENTES
-          </h5>
-        </a>
-        <a
-          href="/"
-          style={ location.includes('financeiro') ? navLocationStyle : {} }
-        >
-          <i className="bi bi-graph-up-arrow"> </i>
-          <h5>
-            FINANCEIRO
-          </h5>
-        </a>
-        <a
-          href="/"
+          onClick={ () => {
+            localStorage.removeItem('token');
+            localStorage.removeItem('tokenGenerationTime');
+            window.location.reload();
+          } }
+          href="/login"
         >
           <i className="bi bi-box-arrow-right"> </i>
           <h5>
