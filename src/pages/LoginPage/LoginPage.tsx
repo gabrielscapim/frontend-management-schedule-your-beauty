@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import styles from './LoginPage.module.css';
 import login from '../../services/login';
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [state, setState] = useState({
     username: '',
     password: '',
@@ -17,6 +19,19 @@ function LoginPage() {
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const handleLogin = async () => {
+    try {
+      const token = await login(username, password);
+
+      localStorage.setItem('token', token);
+      localStorage.setItem('tokenGenerationTime', JSON.stringify(Date.now()));
+      navigate('/');
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -41,7 +56,7 @@ function LoginPage() {
         />
         <Button
           label="Entrar"
-          handleClick={ async () => { await login(username, password); } }
+          handleClick={ handleLogin }
         />
       </section>
     </main>
