@@ -1,15 +1,12 @@
 import axios from 'axios';
 
-const login = async (username: string, password: string): Promise<void> => {
+const login = async (username: string, password: string): Promise<string> => {
   const URL: string = import.meta.env.VITE_API_URL;
 
-  try {
-    const { token } = await axios
-      .post(`${URL}/auth/login`, { username, password }) as any;
-    localStorage.setItem('token', token);
-  } catch (error) {
-    console.log(error);
-  }
+  const { data: { token } } = await axios
+    .post(`${URL}/auth/login`, { username, password }) as any;
+
+  return token;
 };
 
 export default login;
