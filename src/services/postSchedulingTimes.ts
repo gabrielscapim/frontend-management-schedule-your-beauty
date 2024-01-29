@@ -10,7 +10,8 @@ const postSchedulingTimes = async (
   const { lastTimeToSchedule } = state;
   const availableTimesSelected = getAvailableTimesSelected(state, timesFromApi);
   const apiObject = {
-    times: availableTimesSelected,
+    times: availableTimesSelected
+      .filter((availableTimeSelected) => availableTimeSelected !== lastTimeToSchedule),
     ...(lastTimeToSchedule !== 'Nenhum horário' && { lastTimeToSchedule }),
   };
 
